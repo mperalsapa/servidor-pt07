@@ -1,0 +1,5 @@
+# aquest fitxer, retorna la execucio a index.php en cas de no trobar-hi el fitxer i treu el .php de la url
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ index.php?file=$0 [QSA,L]
