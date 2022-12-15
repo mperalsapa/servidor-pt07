@@ -2,6 +2,8 @@
 
 Aquesta practica te la finalitat de provar el concepte "AJAX", el qual permet fer pagines dinàmiques i actualitzar el seu contingut sense haver de carregar altres pagines. Aixo s'aconseguix realitzant peticions mitjançant JavaScript i mostrant la resposta en la pagina ja carregada.
 
+Enllaç al repositori public: https://github.com/mperalsapa/servidor-pt07
+
 # Posada en marxa
 ## Opció 1 - Docker (fàcil)
 Si disposem de docker i docker-compose, podem posar en marxa amb les dependencies necessaries "ja instal·lades" en dos contenidors, un pel php i un altre per la base de dades, amb la següent comanda.
