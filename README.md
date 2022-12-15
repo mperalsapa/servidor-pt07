@@ -5,9 +5,10 @@ Aquesta practica te la finalitat de provar el concepte "AJAX", el qual permet fe
 # Posada en marxa
 ## Opció 1 - Docker (fàcil)
 Si disposem de docker i docker-compose, podem posar en marxa amb les dependencies necessaries "ja instal·lades" en dos contenidors, un pel php i un altre per la base de dades, amb la següent comanda.
-```docker-compose up -d --build``` (la primera vegada necessita --build)
+```docker-compose up -d```
 Accedim al navegador al port 8023 (http://localhost:8023).
 
+> **_NOTE:_**  La primera vegada que arrenca la base de dades, s'ha d'esperar uns segons que importi el fitxer sql. Una vegada el log de mysql indica ```[Entrypoint]: MySQL init process done. Ready for start up``` Ja ha acabat.
 ## Opció 2 - Entorn Local
 ### Configurar les variables d'entorn
 Primer de tot s'ha de configurar al fitxer env.php la ruta del directori on es troba la web.
