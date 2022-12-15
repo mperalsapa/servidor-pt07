@@ -12,12 +12,14 @@ require("env.php");
 
 // funció que s'encarrega de mostrar la ruta demanada si existeix. Si no existeix, fa una redirecció a l'arrel.
 // per exemple si un bot o algú que no sap el que fa introdueix una ruta com wp-admin, li farà una redirecció a l'arrel.
-function route(string $url, array $mux): void
+function route(string $url, array $mux, string $baseUrl): void
 {
     if (isset($mux[$url])) {
         $controller = $mux[$url];
         include_once($controller);
         die();
+    } else {
+        header("location: $baseUrl");
     }
 }
 
@@ -35,7 +37,7 @@ $parsedUri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 // en cas de ser-ho vol dir que el lloc es a l'arrel del servidor web
 // mostrem la ruta normalment 
 if (empty($baseUrl) || $baseUrl == "/") {
-    route($parsedUri, $mux);
+    route($parsedUri, $mux, $baseUrl);
 }
 
 // si el lloc no es a l'arrel, trèiem la baseurl de la url actual
@@ -44,4 +46,4 @@ if (empty($baseUrl) || $baseUrl == "/") {
 // ens traurà la base de la petició i quedara aquest resultat
 // /contact
 $parsedUri = "/" . str_replace($baseUrl, "", $parsedUri);
-route($parsedUri, $mux);
+route($parsedUri, $mux, $baseUrl);
