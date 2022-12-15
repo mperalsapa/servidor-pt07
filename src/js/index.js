@@ -25,8 +25,12 @@ function setAlertStatus(alertMessage, alertType) {
 
     // si el nou estat es diferent, canviem l'estat actual per el nou
     if (alertStatus != alertType) {
-        alert.classList.replace(alertStatus, alertType);
+        succ = alert.classList.replace(alertStatus, alertType);
+        if (succ) {
+            alertStatus = alertType;
+        }
     }
+
     // afegim el text de l'alerta
     document.getElementById("alertContent").innerText = alertMessage;
 
@@ -91,10 +95,10 @@ function sendNewUser() {
 
 // funcio que s'encarrega de esborrar el contingut dels camps del "formulari"
 function clearForm() {
-    document.getElementById("username-input").value = ""
-    document.getElementById("useremail-input").value = ""
-    document.getElementById("userbirth-input").value = ""
-    document.getElementById("usercountry-input").value = "Afganistan"
+    document.getElementById("username-input").value = "";
+    document.getElementById("useremail-input").value = "";
+    document.getElementById("userbirth-input").value = "";
+    document.getElementById("usercountry-input").value = "Afghanistan";
 }
 
 // funcio que afegeix a la taula d'usuaris una nova fila amb les dades introduides com a parametre
