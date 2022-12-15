@@ -1,4 +1,7 @@
 <?php
+// Marc Peral
+// script que s'encarrega de afegir un usuari i la validació d'aquesta operació.
+
 include_once("src/internal/form_errors.php");
 include_once("src/internal/db/mysql.php");
 
@@ -39,15 +42,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         returnResponse($alertMessage, 400);
     }
 
+    // comprovem si l'usuari ja existeix
     if (userExists($userData["email"])) {
         $alertMessage = "L'usuari introduït (correu electronic) ja existeix a la base de dades.";
         returnResponse($alertMessage, 400);
     };
 
+    // en cas de no existir, intentem afegir l'usuari a la base de dades i si no hem pogut mostrem un missatge a l'usuari
     if (!addUser($userData["name"], $userData["email"], $userData["birthDate"], $userData["country"])) {
         $alertMessage = "No s'ha pogut crear l'usuari a la base de dades";
         returnResponse($alertMessage, 500);
     }
 
+    // si arribem aquí, tot ha sortit be
     returnResponse("S'ha creat l'usuari correctament", 200);
 }
