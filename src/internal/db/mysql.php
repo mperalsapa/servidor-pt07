@@ -14,9 +14,9 @@ function getMysqlPDO(): PDO
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     } catch (PDOException $e) {
         if ($debug) {
-            echo "S'ha produit un error a l'hora de connectarse amb la base de dades. Contacta amb un administrador.";
-            echo "Error: $e";
-            returnResponse("", 500);
+            $response =  "S'ha produit un error a l'hora de connectarse amb la base de dades. Contacta amb un administrador.<br>";
+            $response = $response . "Error: $e";
+            returnResponse($response, 500);
         } else {
             include_once("src/internal/form_errors.php");
             returnResponse("S'ha produit un error a l'hora de connectarse a la base de dades. Contacta amb un administrador.", 500);

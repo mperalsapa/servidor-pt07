@@ -2,8 +2,9 @@ version: '3'
 
 services:
   web:
-    container_name: php
+    container_name: php-pt07
     build: .
+    image: 192.168.1.12:5000/php-pt07
     ports:
       - "8023:80"
     stdin_open: true
@@ -15,14 +16,16 @@ services:
     volumes:
       - D:\marcp\Documents\DAW2\SERVIDOR\web\UF3\pt07\:/var/www/html
   mysql:
-    container_name: mysql
-    image: mysql:8.0.31-debian
+    container_name: mysql-pt07
+    # image: mysql:8.0.31-debian
+    build: ./db/.
+    image: 192.168.1.12:5000/mysql-pt07
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     # ports:
     #   - "3323:3306"
-    volumes:
-      - ./pt07-marc-peral.sql:/docker-entrypoint-initdb.d/pt07-marc-peral.sql
+    # volumes:
+    #   - ./pt07-marc-peral.sql:/docker-entrypoint-initdb.d/pt07-marc-peral.sql
     environment:
       # MYSQL_ALLOW_EMPTY_PASSWORD: yes
       MYSQL_ROOT_PASSWORD: patata

@@ -6,29 +6,26 @@
 -- Tiempo de generación: 14-12-2022 a las 15:06:49
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
+;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
+;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
+;
+/*!40101 SET NAMES utf8mb4 */
+;
 --
 -- Base de datos: `pt07-marc-peral`
 --
 CREATE DATABASE IF NOT EXISTS `pt07-marc-peral` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `pt07-marc-peral`;
-
 -- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `usuaris`
 --
-
 DROP TABLE IF EXISTS `usuaris`;
 CREATE TABLE `usuaris` (
   `id` int(11) NOT NULL,
@@ -36,36 +33,39 @@ CREATE TABLE `usuaris` (
   `correu` varchar(100) NOT NULL,
   `naixement` date NOT NULL,
   `pais` varchar(55) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 --
 -- Volcado de datos para la tabla `usuaris`
 --
-
-INSERT INTO `usuaris` (`id`, `nom`, `correu`, `naixement`, `pais`) VALUES
-(17, 'Marc', 'm.peral@sapalomera.cat', '1998-01-01', 'Spain');
-
+INSERT INTO `usuaris` (`id`, `nom`, `correu`, `naixement`, `pais`)
+VALUES (
+    17,
+    'Marc',
+    'm.peral@sapalomera.cat',
+    '1998-01-01',
+    'Spain'
+  );
 --
 -- Índices para tablas volcadas
 --
-
 --
 -- Indices de la tabla `usuaris`
 --
 ALTER TABLE `usuaris`
-  ADD PRIMARY KEY (`id`);
-
+ADD PRIMARY KEY (`id`);
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
 --
 -- AUTO_INCREMENT de la tabla `usuaris`
 --
 ALTER TABLE `usuaris`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 18;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
+;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
+;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
+;
