@@ -1,13 +1,13 @@
 var alertStatus = "alert-primary";
 
-// funcio copiada de StackOverflow que converteix les dates del format 2000-12-31 a edat tenin en compte que la data es naixement.
+// funció copiada de StackOverflow que converteix les dates del format 2000-12-31 a edat tenint en compte que la data es naixement.
 function calculateAge(birthday) {
     const ageDifMs = Date.now() - new Date(birthday).getTime();
     const ageDate = new Date(ageDifMs);
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
-// funcio que canvia l'estat de lalerta per que sigui visible
+// funció que canvia l'estat de l'alerta per que sigui visible
 function toggleAlert(newState) {
     if (newState) {
         document.getElementById("statusAlert").classList.remove("d-none")
@@ -17,7 +17,7 @@ function toggleAlert(newState) {
 
 }
 
-// funcio que canvia l'estat de l'alerta i el seu missatge
+// funció que canvia l'estat de l'alerta i el seu missatge
 function setAlertStatus(alertMessage, alertType) {
 
     // agafem la referencia a l'alerta
@@ -63,11 +63,11 @@ function sendNewUser() {
 
     // preparem l'alerta
     toggleAlert(true);
-    setAlertStatus("Processant peticio...", "alert-primary")
+    setAlertStatus("Processant petició...", "alert-primary")
 
-    // preparem la peticio AJAX
+    // preparem la petició AJAX
     var xhttp = new XMLHttpRequest();
-    // afegim una funcio que escolta els canvis en la peticio AJAX
+    // afegim una funció que escolta els canvis en la petició AJAX
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4) {
             let alertType;
@@ -93,7 +93,7 @@ function sendNewUser() {
     xhttp.send(`name=${name}&email=${email}&birthDate=${birthDate}&country=${country}`);
 }
 
-// funcio que s'encarrega de esborrar el contingut dels camps del "formulari"
+// funció que s'encarrega de esborrar el contingut dels camps del "formulari"
 function clearForm() {
     document.getElementById("username-input").value = "";
     document.getElementById("useremail-input").value = "";
@@ -101,7 +101,7 @@ function clearForm() {
     document.getElementById("usercountry-input").value = "Afghanistan";
 }
 
-// funcio que afegeix a la taula d'usuaris una nova fila amb les dades introduides com a parametre
+// funció que afegeix a la taula d'usuaris una nova fila amb les dades introduïdes com a paràmetre
 function displayNewUser(userData) {
 
     // busquem la taula on afegir l'usuari
@@ -123,7 +123,7 @@ function displayNewUser(userData) {
 
 }
 
-// funcio que s'encarrega de demanar tots els usuaris al backend i els mostra a la taula d'usuaris
+// funció que s'encarrega de demanar tots els usuaris al backend i els mostra a la taula d'usuaris
 function displayUsers() {
 
     toggleAlert(true);

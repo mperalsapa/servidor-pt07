@@ -2,7 +2,7 @@
 include_once("src/internal/form_errors.php");
 include_once("src/internal/db/mysql.php");
 
-// funcio que es fa servir per validar la data introduida per l'usuari
+// funció que es fa servir per validar la data introduïda per l'usuari
 function validateDate($date, $format = 'Y-m-d')
 {
     $d = DateTime::createFromFormat($format, $date);
@@ -10,22 +10,22 @@ function validateDate($date, $format = 'Y-m-d')
 }
 
 
-// comprovem si la sol·licitut es POST
+// comprovem si la petició es POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // comprovem si hi ha error amb algun camp introduit
+    // comprovem si hi ha error amb algun camp introduït
     if (empty($_POST["name"]) || strlen($_POST["name"]) > 50) {
-        $alertMessage = "Has d'introduir un nom (maxim 50 caracters).";
+        $alertMessage = "Has d'introduir un nom (maxim 50 caràcters).";
     }
     $userData["name"] = $_POST["name"];
 
     if (empty($_POST["email"]) || strlen($_POST["email"]) > 50) {
-        $alertMessage = "Has d'introduir un email (maxim 50 caracters).";
+        $alertMessage = "Has d'introduir un email (maxim 50 caràcters).";
     }
     $userData["email"] = $_POST["email"];
 
     if (empty($_POST["country"]) || strlen($_POST["country"]) > 50) {
-        $alertMessage = "Has d'introduir un pais (maxim 50 caracters).";
+        $alertMessage = "Has d'introduir un pais (maxim 50 caràcters).";
     }
     $userData["country"] = $_POST["country"];
 
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (userExists($userData["email"])) {
-        $alertMessage = "L'usuari introduit (correu electronit) ja existeix a la base de dades.";
+        $alertMessage = "L'usuari introduït (correu electronic) ja existeix a la base de dades.";
         returnResponse($alertMessage, 400);
     };
 
