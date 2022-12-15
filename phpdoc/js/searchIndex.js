@@ -1,0 +1,54 @@
+Search.appendIndex(
+    [
+                {
+            "fqsen": "\\route\u0028\u0029",
+            "name": "route",
+            "summary": "",
+            "url": "namespaces/default.html#function_route"
+        },                {
+            "fqsen": "\\validateDate\u0028\u0029",
+            "name": "validateDate",
+            "summary": "",
+            "url": "namespaces/default.html#function_validateDate"
+        },                {
+            "fqsen": "\\makeUser\u0028\u0029",
+            "name": "makeUser",
+            "summary": "",
+            "url": "namespaces/default.html#function_makeUser"
+        },                {
+            "fqsen": "\\reponseUsers\u0028\u0029",
+            "name": "reponseUsers",
+            "summary": "",
+            "url": "namespaces/default.html#function_reponseUsers"
+        },                {
+            "fqsen": "\\getMysqlPDO\u0028\u0029",
+            "name": "getMysqlPDO",
+            "summary": "",
+            "url": "namespaces/default.html#function_getMysqlPDO"
+        },                {
+            "fqsen": "\\userExists\u0028\u0029",
+            "name": "userExists",
+            "summary": "",
+            "url": "namespaces/default.html#function_userExists"
+        },                {
+            "fqsen": "\\addUser\u0028\u0029",
+            "name": "addUser",
+            "summary": "",
+            "url": "namespaces/default.html#function_addUser"
+        },                {
+            "fqsen": "\\getUsers\u0028\u0029",
+            "name": "getUsers",
+            "summary": "",
+            "url": "namespaces/default.html#function_getUsers"
+        },                {
+            "fqsen": "\\returnResponse\u0028\u0029",
+            "name": "returnResponse",
+            "summary": "",
+            "url": "namespaces/default.html#function_returnResponse"
+        },                {
+            "fqsen": "\\",
+            "name": "\\",
+            "summary": "",
+            "url": "namespaces/default.html"
+        }            ]
+);
