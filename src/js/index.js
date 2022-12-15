@@ -94,7 +94,7 @@ function clearForm() {
     document.getElementById("username-input").value = ""
     document.getElementById("useremail-input").value = ""
     document.getElementById("userbirth-input").value = ""
-    document.getElementById("usercountry-input").value = ""
+    document.getElementById("usercountry-input").value = "Afganistan"
 }
 
 // funcio que afegeix a la taula d'usuaris una nova fila amb les dades introduides com a parametre
