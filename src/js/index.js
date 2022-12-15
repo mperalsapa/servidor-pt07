@@ -125,17 +125,24 @@ function displayNewUser(userData) {
 
 // funcio que s'encarrega de demanar tots els usuaris al backend i els mostra a la taula d'usuaris
 function displayUsers() {
+
+    toggleAlert(true);
+    setAlertStatus("Carregant dades...", "alert-primary")
+
     // enviem les dades del nou usuari al backend
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4) {
             switch (this.status) {
                 case 200:
+                    toggleAlert(false);
                     response = JSON.parse(this.responseText)
                     response.users.forEach(user => {
                         displayNewUser(user)
                     });
                     break;
+                default:
+                    setAlertStatus(this.responseText, "alert-danger");
 
             }
         }
