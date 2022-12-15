@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  web:
+    container_name: php
+    build: .
+    ports:
+      - "8023:80"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+    volumes:
+      - D:\marcp\Documents\DAW2\SERVIDOR\web\UF3\pt07\:/var/www/html
+  mysql:
+    container_name: mysql
+    image: mysql:8.0.31-debian
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    # ports:
+    #   - "3323:3306"
+    volumes:
+      - ./pt07-marc-peral.sql:/docker-entrypoint-initdb.d/pt07-marc-peral.sql
+    environment:
+      # MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_ROOT_PASSWORD: patata
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
