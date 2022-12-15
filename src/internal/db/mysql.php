@@ -62,7 +62,7 @@ function addUser(string $name, string $email, string $birthDate, string $country
 }
 
 // agafa la informacio dels usuaris en base de dades
-function getUsers(): Mixed
+function getUsers(): ?PDOStatement
 {
     $mysqlPdo = getMysqlPDO();
     $pdo = $mysqlPdo->prepare('SELECT nom, correu, naixement, pais FROM usuaris');

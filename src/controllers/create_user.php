@@ -6,7 +6,7 @@ include_once("src/internal/form_errors.php");
 include_once("src/internal/db/mysql.php");
 
 // funció que es fa servir per validar la data introduïda per l'usuari
-function validateDate($date, $format = 'Y-m-d')
+function validateDate($date, $format = 'Y-m-d'): bool
 {
     $d = DateTime::createFromFormat($format, $date);
     return $d && $d->format($format) === $date;
